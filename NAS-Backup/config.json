@@ -1,0 +1,35 @@
+{
+  "name": "NAS Backup",
+  "version": "0.0.1",
+  "slug": "scp_nas_backup",
+  "description": "Create and copy snapshots using SCP to remote NAS server.",
+  "url": "https://github.com/zdima/hassio-nas-backup",
+  "startup": "once",
+  "boot": "manual",
+  "hassio_api": true,
+  "hassio_role": "backup",
+  "map": ["backup:rw"],
+  "image": "repo/remote-backup-{arch}",
+  "options": {
+    "ssh_host": "",
+    "ssh_port": 22,
+    "ssh_user": "",
+    "ssh_key": [],
+    "remote_directory": "",
+    "zip_password": "",
+    "full_interval": 7,
+    "inc_interval": 1,
+    "keep_full_backup": 5
+  },
+  "schema": {
+    "ssh_host": "str",
+    "ssh_port": "int",
+    "ssh_user": "str",
+    "ssh_key": ["str"],
+    "remote_directory": "str",
+    "zip_password": "str",
+    "full_interval": "int",
+    "inc_interval": "int",
+    "keep_full_backup": "int"
+  }
+}
